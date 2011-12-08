@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class BubbleView;
+
 @interface JBViewController : UIViewController
+
+@property (strong, nonatomic) BubbleView *bubbleView;
 
 @end

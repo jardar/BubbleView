@@ -7,8 +7,10 @@
 //
 
 #import "JBViewController.h"
+#import "BubbleView.h"
 
 @implementation JBViewController
+@synthesize bubbleView;
 
 - (void)didReceiveMemoryWarning
 {
@@ -21,6 +23,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    bubbleView = [[BubbleView alloc]initWithFrame:CGRectMake(0.0, 0.0, 250.0, 250.0)];
+    [self.view addSubview:bubbleView];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

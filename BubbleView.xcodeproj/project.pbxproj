@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		962287E314908F1A001A049E /* addButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 962287E214908F1A001A049E /* addButton.png */; };
+		962287EA14909124001A049E /* junk.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962287E914909124001A049E /* junk.xib */; };
 		96685CB114908A8000AB0636 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96685CB014908A8000AB0636 /* UIKit.framework */; };
 		96685CB314908A8000AB0636 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96685CB214908A8000AB0636 /* Foundation.framework */; };
 		96685CB514908A8000AB0636 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96685CB414908A8000AB0636 /* CoreGraphics.framework */; };
@@ -16,23 +18,28 @@
 		96685CC414908A8100AB0636 /* JBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96685CC314908A8100AB0636 /* JBViewController.m */; };
 		96685CC714908A8100AB0636 /* JBViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96685CC514908A8100AB0636 /* JBViewController_iPhone.xib */; };
 		96685CCA14908A8100AB0636 /* JBViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96685CC814908A8100AB0636 /* JBViewController_iPad.xib */; };
+		96685CD214908A9F00AB0636 /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96685CD114908A9F00AB0636 /* BubbleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		962287E214908F1A001A049E /* addButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addButton.png; sourceTree = "<group>"; };
+		962287E914909124001A049E /* junk.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = junk.xib; sourceTree = "<group>"; };
 		96685CAC14908A8000AB0636 /* BubbleView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubbleView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96685CB014908A8000AB0636 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		96685CB214908A8000AB0636 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96685CB414908A8000AB0636 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		96685CB814908A8000AB0636 /* BubbleView-Info.plist */ = {isa = PBXFileReference; path = "BubbleView-Info.plist"; sourceTree = "<group>"; };
+		96685CB814908A8000AB0636 /* BubbleView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BubbleView-Info.plist"; sourceTree = "<group>"; };
 		96685CBA14908A8000AB0636 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		96685CBC14908A8000AB0636 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		96685CBE14908A8000AB0636 /* BubbleView-Prefix.pch */ = {isa = PBXFileReference; path = "BubbleView-Prefix.pch"; sourceTree = "<group>"; };
-		96685CBF14908A8100AB0636 /* JBAppDelegate.h */ = {isa = PBXFileReference; path = JBAppDelegate.h; sourceTree = "<group>"; };
+		96685CBE14908A8000AB0636 /* BubbleView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BubbleView-Prefix.pch"; sourceTree = "<group>"; };
+		96685CBF14908A8100AB0636 /* JBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBAppDelegate.h; sourceTree = "<group>"; };
 		96685CC014908A8100AB0636 /* JBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBAppDelegate.m; sourceTree = "<group>"; };
-		96685CC214908A8100AB0636 /* JBViewController.h */ = {isa = PBXFileReference; path = JBViewController.h; sourceTree = "<group>"; };
+		96685CC214908A8100AB0636 /* JBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBViewController.h; sourceTree = "<group>"; };
 		96685CC314908A8100AB0636 /* JBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBViewController.m; sourceTree = "<group>"; };
 		96685CC614908A8100AB0636 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/JBViewController_iPhone.xib; sourceTree = "<group>"; };
 		96685CC914908A8100AB0636 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/JBViewController_iPad.xib; sourceTree = "<group>"; };
+		96685CD014908A9F00AB0636 /* BubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleView.h; sourceTree = "<group>"; };
+		96685CD114908A9F00AB0636 /* BubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +86,9 @@
 		96685CB614908A8000AB0636 /* BubbleView */ = {
 			isa = PBXGroup;
 			children = (
+				96685CD014908A9F00AB0636 /* BubbleView.h */,
+				96685CD114908A9F00AB0636 /* BubbleView.m */,
+				962287E914909124001A049E /* junk.xib */,
 				96685CBF14908A8100AB0636 /* JBAppDelegate.h */,
 				96685CC014908A8100AB0636 /* JBAppDelegate.m */,
 				96685CC214908A8100AB0636 /* JBViewController.h */,
@@ -93,6 +103,7 @@
 		96685CB714908A8000AB0636 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				962287E214908F1A001A049E /* addButton.png */,
 				96685CB814908A8000AB0636 /* BubbleView-Info.plist */,
 				96685CB914908A8000AB0636 /* InfoPlist.strings */,
 				96685CBC14908A8000AB0636 /* main.m */,
@@ -155,6 +166,8 @@
 				96685CBB14908A8000AB0636 /* InfoPlist.strings in Resources */,
 				96685CC714908A8100AB0636 /* JBViewController_iPhone.xib in Resources */,
 				96685CCA14908A8100AB0636 /* JBViewController_iPad.xib in Resources */,
+				962287E314908F1A001A049E /* addButton.png in Resources */,
+				962287EA14909124001A049E /* junk.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +181,7 @@
 				96685CBD14908A8000AB0636 /* main.m in Sources */,
 				96685CC114908A8100AB0636 /* JBAppDelegate.m in Sources */,
 				96685CC414908A8100AB0636 /* JBViewController.m in Sources */,
+				96685CD214908A9F00AB0636 /* BubbleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +301,7 @@
 				96685CCF14908A8100AB0636 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
