@@ -10,12 +10,13 @@
 
 @interface BubbleView : UIView
 
-@property (strong, nonatomic) NSArray *buttons;
+@property (strong, nonatomic) NSMutableArray *buttons;
 @property (strong, nonatomic) NSArray *buttonPositions;
 @property (strong, nonatomic) UIButton *mainButton;
-
+@property BOOL buttonsAreShowing;
 
 - (void)setupButtons;
 - (void)populateButtonPositions;
+- (void)toggleShowHideButtons;
 
 @end
