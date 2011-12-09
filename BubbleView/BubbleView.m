@@ -7,16 +7,18 @@
 //
 
 #import "BubbleView.h"
+#define degreesToRadians(x) (M_PI * x / 180.0)
 
 @implementation BubbleView
-@synthesize buttons, mainButton, buttonPositions, buttonsAreShowing;
+@synthesize buttons, mainButton, buttonPositions, buttonsAreShowing, animationDuration;
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
+        [self setBackgroundColor:[UIColor clearColor]];
         buttonsAreShowing = FALSE;
+        __strong buttonsAreShowing = buttonsAreShowing;
         [self populateButtonPositions];
         [self setupButtons];
     }
@@ -24,21 +26,22 @@
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+-(void)drawRect:(CGRect)rect
 {
-    // Drawing code
+    CGContextRef context= UIGraphicsGetCurrentContext();
+    CGContextSetStrokeColorWithColor(context, [[UIColor blackColor] CGColor]);
+    CGContextStrokeEllipseInRect(context, CGRectMake(10.0, 10.0, 100.0, 100.0));
+    [self setNeedsDisplay];
 }
 */
 
 - (void)populateButtonPositions
 {
-    NSString *point1 = NSStringFromCGPoint(CGPointMake(30.0, -30.0));
-    NSString *point2 = NSStringFromCGPoint(CGPointMake(55.0, -10.0));
-    NSString *point3 = NSStringFromCGPoint(CGPointMake(65.0, 15.0));
-    NSString *point4 = NSStringFromCGPoint(CGPointMake(55.0, 40.0));
-    NSString *point5 = NSStringFromCGPoint(CGPointMake(30.0, 60.0));
+    NSString *point1 = NSStringFromCGPoint(CGPointMake(40.0, -30.0));
+    NSString *point2 = NSStringFromCGPoint(CGPointMake(65.0, -10.0));
+    NSString *point3 = NSStringFromCGPoint(CGPointMake(75.0, 15.0));
+    NSString *point4 = NSStringFromCGPoint(CGPointMake(65.0, 40.0));
+    NSString *point5 = NSStringFromCGPoint(CGPointMake(40.0, 60.0));
     buttonPositions = [[NSArray alloc]initWithObjects:point1, point2, point3, point4, point5, nil];
     
 }
@@ -55,16 +58,9 @@
     void(^createSubButton)(UIButton *, NSString *)=^(UIButton *theButton, NSString *positionAdjustmentString) {
         
         theButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
-        
         [theButton setFrame:CGRectMake(mainButton.center.x, mainButton.center.y, 18, 19)];
-        
-        /*
-        CGPoint positionAdjustmentValue = CGPointFromString(positionAdjustmentString);
-        [theButton setFrame:CGRectMake((mainButton.frame.origin.x + positionAdjustmentValue.x), (mainButton.frame.origin.y + positionAdjustmentValue.y), 18, 19)];
-        [theButton setShowsTouchWhenHighlighted:FALSE];
-         */
-        
         [theButton setHidden:TRUE];
+        [theButton setTransform:CGAffineTransformMakeRotation(M_PI)];
         [buttons addObject:theButton];
         [self addSubview:theButton];
     };
@@ -87,35 +83,55 @@
 
 - (void)toggleShowHideButtons
 {
+    animationDuration = 0.25;
+    [self.superview bringSubviewToFront:mainButton];
     
-    if (buttonsAreShowing)
+    if (buttonsAreShowing == TRUE)
     {
         for (UIButton* theButton in buttons)
         {
-            [UIView animateWithDuration:0.5 animations:^{
+            [UIView animateWithDuration:animationDuration animations:^{
                 [theButton setCenter:mainButton.center];
                 [theButton setAlpha:0.0];
+                [theButton setTransform:CGAffineTransformMakeRotation(M_PI)];
             }];
+            animationDuration = (animationDuration + 0.05);
         }
         [self.superview bringSubviewToFront:mainButton];
         buttonsAreShowing = FALSE;
     }
-    else
+    else if (buttonsAreShowing == FALSE)
     {
-    for (UIButton* theButton in buttons)
-    {
-        [theButton setHidden:FALSE];
-        CGPoint positionAdjustmentValue = CGPointFromString([buttonPositions objectAtIndex:[buttons indexOfObject:theButton]]);
-        [UIView animateWithDuration:0.5 animations:^{
-            [theButton setFrame:CGRectMake((mainButton.frame.origin.x + positionAdjustmentValue.x), (mainButton.frame.origin.y + positionAdjustmentValue.y), 18, 19)];
-            [theButton setAlpha:1.0];
+        for (UIButton* theButton in buttons)
+        {
+            [theButton setHidden:FALSE];
+            CGPoint positionAdjustmentValue = CGPointFromString([buttonPositions objectAtIndex:[buttons indexOfObject:theButton]]);
+            [UIView animateWithDuration:animationDuration animations:^{
+                [theButton setFrame:CGRectMake((mainButton.frame.origin.x + positionAdjustmentValue.x), (mainButton.frame.origin.y + positionAdjustmentValue.y), 18, 19)];
+                [theButton setAlpha:1.0];
+                [theButton setTransform:CGAffineTransformMakeRotation(0)];
         }];
+        animationDuration = (animationDuration + 0.05);
+
     }
-    [self.superview bringSubviewToFront:mainButton];
+
     buttonsAreShowing = TRUE;
     }
     
 }
 
 
+
+
 @end
+
+
+
+
+
+
+
+
+
+
+

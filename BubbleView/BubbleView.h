@@ -14,6 +14,7 @@
 @property (strong, nonatomic) NSArray *buttonPositions;
 @property (strong, nonatomic) UIButton *mainButton;
 @property BOOL buttonsAreShowing;
+@property float animationDuration;
 
 - (void)setupButtons;
 - (void)populateButtonPositions;
